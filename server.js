@@ -18,6 +18,8 @@ const categoryApiRouter = require('./routes/categoryApi');
 const userApiRouter = require('./routes/userApi');
 const orderApiRouter = require('./routes/orderApi');
 
+const soapApiRouter = require('./routes/soapApi');
+
 // Define routes
 app.get('/', (req, res) => {
     res.render('index');
@@ -31,6 +33,9 @@ app.get('/ecommerce-two', (req, res) => {
     res.render('ecommerce-two');
 });
 
+app.get('/test-assignments', (req, res) => {
+    res.render('test-assignments');
+});
 // API PRODUCTS
 app.use('/api/products', productApiRouter);
 
@@ -45,6 +50,9 @@ app.use('/api/users', userApiRouter);
 
 // API ORDERS
 app.use('/api/orders', orderApiRouter);
+
+// SOAP API Sample
+app.use('/api/soap', soapApiRouter);
 
 // Start the server
 app.listen(port, () => {
