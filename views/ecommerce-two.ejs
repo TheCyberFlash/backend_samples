@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce API Documentation</title>
+    <!-- Link to Bootstrap CSS (add this line) -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Include your custom styles (if any) -->
+    <link rel="stylesheet" href="/css/styles.css"></head>
+<body>
+
+        <!-- Include the header using EJS -->
+        <%- include('shared/header') %>
+
+        
+        
+
+<div class="container">
+
+    <div class="notes" style="margin-bottom: 20px;">
+        <p>
+            This page is designed to demonstrate the process of both creating an API and consuming an API. You can interact with various API endpoints by clicking on each one to see the results displayed in the box on the right.
+        </p>
+    </div>
+
+
+    <h1>E-commerce API Documentation</h1>
+
+<!-- Product API Section -->
+<section class="api-section product-api">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="api-content">
+                <h2>Product API</h2>
+                <p>Endpoints for managing products.</p>
+                <ul>
+                    <li class="api-line" data-endpoint="/api/products" data-type="GET">
+                        <strong>GET /api/products </strong>: Get a list of all products.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/products/1" data-type="GET">
+                        <strong>GET /api/products/:id </strong>: Get product details by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/products" data-type="POST">
+                        <strong>POST /api/products </strong>: Create a new product.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/products/1" data-type="PUT">
+                        <strong>PUT /api/products/:id </strong>: Update a product by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/products/1" data-type="DELETE">
+                        <strong>DELETE /api/products/:id </strong>: Delete a product by ID.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="api-response response-box-container">
+                <textarea class="product-response-box" readonly style="width: 95%;"></textarea>
+            </div>            
+        </div>
+    </div>
+</section>
+
+<!-- Category API Section -->
+<section class="api-section category-api">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="api-content">
+                <h2>Category API</h2>
+                <p>Endpoints for managing product categories.</p>
+                <ul>
+                    <li class="api-line" data-endpoint="/api/categories" data-type="GET">
+                        <strong>GET /api/categories </strong>: Get a list of all categories.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/categories/1" data-type="GET">
+                        <strong>GET /api/categories/:id </strong>: Get category details by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/categories" data-type="POST">
+                        <strong>POST /api/categories </strong>: Create a new category.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/categories/1" data-type="PUT">
+                        <strong>PUT /api/categories/:id </strong>: Update a category by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/categories/1" data-type="DELETE">
+                        <strong>DELETE /api/categories/:id </strong>: Delete a category by ID.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="api-response response-box-container">
+                <textarea class="category-response-box" readonly style="width: 95%;"></textarea>
+            </div>            
+        </div>
+    </div>
+</section>
+
+
+<!-- Order API Section -->
+<section class="api-section order-api">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="api-content">
+                <h2>Order API</h2>
+                <p>Endpoints for managing orders.</p>
+                <ul>
+                    <li class="api-line" data-endpoint="/api/orders" data-type="GET">
+                        <strong>GET /api/orders </strong>: Get a list of all orders.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1" data-type="GET">
+                        <strong>GET /api/orders/:orderId </strong>: Get order details by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders" data-type="POST">
+                        <strong>POST /api/orders </strong>: Create a new order.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1" data-type="PUT">
+                        <strong>PUT /api/orders/:orderId </strong>: Update order status by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1" data-type="DELETE">
+                        <strong>DELETE /api/orders/:orderId </strong>: Cancel an order by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1/orders" data-type="GET">
+                        <strong>GET /api/orders/:userId/orders </strong>: Get a list of orders by user.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1/total" data-type="GET">
+                        <strong>GET /api/orders/:orderId/total </strong>: Calculate order total by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders" data-type="GET">
+                        <strong>GET /api/orders </strong>: Filter orders by status.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1/mark-as-paid" data-type="PUT">
+                        <strong>PUT /api/orders/:orderId/mark-as-paid </strong>: Mark an order as paid by ID.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/orders/1/invoice" data-type="GET">
+                        <strong>GET /api/orders/:orderId/invoice </strong>: Generate an invoice for an order by ID.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="api-response response-box-container">
+                <textarea class="order-response-box" readonly style="width: 95%;"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- User API Section -->
+<section class="api-section user-api">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="api-content">
+                <h2>User API</h2>
+                <p>Endpoints for user management and authentication.</p>
+                <ul>
+                    <li class="api-line" data-endpoint="/api/users/register" data-type="POST">
+                        <strong>POST /api/users/register </strong>: Register a new user.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/login" data-type="POST">
+                        <strong>POST /api/users/login </strong>: Authenticate a user.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/logout" data-type="POST">
+                        <strong>POST /api/users/logout </strong>: Log out a user.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/profile" data-type="GET">
+                        <strong>GET /api/users/profile </strong>: Get user profile information.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/profile" data-type="PUT">
+                        <strong>PUT /api/users/profile </strong>: Update user profile information.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/1" data-type="GET">
+                        <strong>GET /api/users/:id </strong>: Get user data by ID (admin access).
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users" data-type="GET">
+                        <strong>GET /api/users </strong>: Get a list of users (admin access).
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/1" data-type="PUT">
+                        <strong>PUT /api/users/:id </strong>: Update user data by ID (admin access).
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/1" data-type="DELETE">
+                        <strong>DELETE /api/users/:id </strong>: Delete a user by ID (admin access).
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/forgot-password" data-type="POST">
+                        <strong>POST /api/users/forgot-password </strong>: Initiate password reset.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/users/reset-password" data-type="POST">
+                        <strong>POST /api/users/reset-password </strong>: Reset a user's password.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="api-response response-box-container">
+                <textarea class="user-response-box" readonly style="width: 95%;"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search API Section -->
+<section class="api-section search-api">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="api-content">
+                <h2>Search API</h2>
+                <p>Endpoints for searching and filtering products.</p>
+                <ul>
+                    <li class="api-line" data-endpoint="/api/search" data-type="GET">
+                        <strong>GET /api/search </strong>: Search for products by keyword or category.
+                    </li>
+                    <li class="api-line" data-endpoint="/api/search/filter" data-type="GET">
+                        <strong>GET /api/search/filter </strong>: Filter products by category.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="api-response response-box-container">
+                <textarea class="search-response-box" readonly style="width: 95%;"></textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</div>
+
+<%- include('shared/footer') %>
+
+<!-- Include your custom ecommerce.css -->
+<link rel="stylesheet" href="/css/ecommerce-two.css">
+
+    <!-- Include your custom JavaScript (ecommerce.js) -->
+    <script src="/js/ecommerce-two.js"></script>
+</body>
+</html>

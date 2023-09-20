@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Project | Ecommerce</title>
+    
+    <!-- Link to Bootstrap CSS (add this line) -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Include your custom styles (if any) -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Include the header using EJS -->
+    <%- include('shared/header') %>
+
+    <main>
+
+        <div class="container">
+
+            <div class="notes" style="margin-bottom: 20px;">
+                <p>
+                    The <a href="https://fakestoreapi.com/" target="_blank">FakeStore API</a> offers a comprehensive set of functionalities for simulating an e-commerce environment. With this API, you can explore various aspects of online shopping and management, even though the data won't persist.
+                </p>
+                <p>
+                    Here are some of the key features you can experiment with:
+                </p>
+                <ul>
+                    <li>Access a wide range of product listings across different categories.</li>
+                    <li>Simulate cart and user profile interactions to mimic the shopping experience.</li>
+                    <li>Add products to your cart and proceed to a simulated checkout process.</li>
+                    <li>While you can add products, please note that they won't be available in the API's database.</li>
+                </ul>
+                <p>
+                    On this page, you can perform two main actions:
+                </p>
+                <ul>
+                    <li>Retrieve a selection of products using a GET request. Products are displayed on a 3x3 grid, and there's no category filtering.</li>
+                    <li>Simulate a POST request to add a new product. However, please note that no actual data will be stored.</li>
+                </ul>                
+            </div>
+
+            <!-- Collapsible container for GET Products -->
+            <div class="card mb-3">
+                <div class="card-header" id="getProductsHeader">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" id="toggleGetProducts">
+                            GET Products
+                        </button>
+                    </h5>
+                </div>
+                <div id="getProductsCollapse">
+                    <div class="get-products card-body">
+                        <div class="navigation-arrows" style="margin-bottom: 20px;">
+                            <button class="prev-button">Previous</button>
+                            <button class="next-button">Next</button>
+                        </div>
+                        <!-- Product grid container -->
+                        <div class="product-grid">
+                            <!-- Product cards will be dynamically generated here -->
+                        </div>
+                        <div class="navigation-arrows" style="margin-bottom: 20px;">
+                            <button class="prev-button">Previous</button>
+                            <button class="next-button">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Collapsible container for POST Products -->
+            <div class="card mb-3">
+                <div class="card-header" id="postProductsHeader">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" id="togglePostProducts">
+                            POST Products
+                        </button>
+                    </h5>
+                </div>
+                <div id="postProductsCollapse">
+                    <div class="post-products card-body" style="min-width: 1077px;">                        
+                        <!-- Product form container -->
+                        <div class="product-form">
+                            <h2>Add a New Product</h2>
+                            <form id="addProductForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="title">Title</label>
+                                            <input type="text" id="title" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="price">Price</label>
+                                            <input type="number" id="price" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <textarea id="description" class="form-control" rows="3" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="image">Image URL</label>
+                                            <input type="url" id="image" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Category</label>
+                                            <input type="text" id="category" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Add Product</button>
+                            </form>    
+                            <div>
+                                <!-- Success message -->
+                                <p id="successMessage" class="text-success mt-3"></p>
+                            </div>                        
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            
+        </div>
+    </main>
+    
+
+    <%- include('shared/footer') %>
+
+    <!-- Include your custom ecommerce.css -->
+    <link rel="stylesheet" href="/css/ecommerce.css">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include your custom JavaScript (ecommerce.js) -->
+    <script src="/js/ecommerce.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Project</title>
+    
+    <!-- Link to Bootstrap CSS (add this line) -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Include your custom styles (if any) -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- Include the header using EJS -->
+    <%- include('shared/header') %>
+
+    <!-- Main Content (wrapped in a container) -->
+    <div class="container">
+        
+
+    <!-- Your main content goes here -->
+    <main>
+        <div class="container text-center" style="margin-top: 30px;">
+            <h1>Welcome to Jurassic Park</h1>
+            <p>Choose a section from the navigation menu to explore:</p>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- E-commerce Section -->
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="/ecommerce" class="text-decoration-none">
+                                <i class="fas fa-shopping-cart fa-4x mb-3"></i>
+                                <h3 class="card-title">E-commerce (FakeStore)</h3>
+                            </a>
+                            <p class="card-text" style="text-align: left;">
+                                This section utilizes the <a href="https://fakestoreapi.com/" target="_blank">FakeStore API</a> to provide mock e-commerce data, including product listings, categories, and prices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- E-commerce-two Section -->
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <a href="/ecommerce-two" class="text-decoration-none">
+                                <i class="fas fa-shopping-cart fa-4x mb-3"></i>
+                                <h3 class="card-title">E-commerce-two (MyFakeStore)</h3>
+                            </a>
+                            <p class="card-text" style="text-align: left;">
+                                This section simulates a built-in API that acts like an e-commerce store, similar to FakeStore. It showcases the ability to both build and consume APIs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="padding: 20px;">
+            <a href="https://www.youtube.com/watch?v=ywl-UP0Pbh8" target="_blank">
+                <img src="/img/230712 Immortal's Fenyx Rising pt.8.jpg" alt="Image Alt Text" style="max-width: 65%; border: 2px solid red;">
+            </a>
+            <p>Fenyx Rising Part 8 - Blasting Roosters, Accessing Adonis's Fall Vault, & Finding Additional Loot!</p>
+        </div>
+        
+        
+                
+    </main>
+
+ 
+    </div>
+
+       <!-- Include the footer using EJS -->
+       <%- include('shared/footer') %>
+    <!-- Link to Bootstrap JS (add this line) -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Include your custom scripts (if any) -->
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
